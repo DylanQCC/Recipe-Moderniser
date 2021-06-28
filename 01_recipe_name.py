@@ -19,7 +19,7 @@ def not_blank(question):
             continue
         elif has_errors != "":
             print(error)
-            break
+            continue
         else:
             return response
 
