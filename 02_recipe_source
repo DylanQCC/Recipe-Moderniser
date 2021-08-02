@@ -1,0 +1,39 @@
+# Asking user for recipe name
+# Creating coloured text
+RED_B = '\033[0;1;31m'  # Bold Red Text
+DEFAULT = '\033[m'  # Default Text
+#                                                - TOP OF PAGE -
+
+
+# Blank check here
+def not_blank(question, error_msg, num_chk):
+    error = error_msg
+    has_errors = ""
+
+    valid = False
+    while not valid:
+        response = input(question)
+
+        if num_chk != "yes":
+            # look at each character in string and if it's a number, complain
+            for letter in response:
+                if letter.isdigit():
+                    has_errors = "yes"
+                    break
+
+        if response == "":
+            print(error)
+            print()
+            continue
+        elif has_errors != "":
+            print(error)
+            continue
+        else:
+            return response
+
+
+# Main recipe question
+recipe_source = not_blank("Where's the recipe from? ", "The recipe source cannot be blank", "Yes")
+
+print("Recipe from {}".format(recipe_source))
+print()
