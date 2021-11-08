@@ -30,3 +30,4 @@ user_serving = num_check("How many servings do you want? ")
 scale_fact = user_serving / serving_size
 
 print("Scale Factor: {}".format(scale_fact))
+
